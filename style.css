@@ -1,29 +1,38 @@
 
   
-body{
+html, body{
     font-size: px;
     font-family: monospace;
+    height: 100%;
+    min-height: 100%;
+    color: white;
+    position: center;
 }
 
 #question{
     width:500px;
     height : 125px;
-    position: absolute;
+    position: center;
     right:0;
     top:0;
+    color: white;
+    background-color: violet;
 }
 #question p{
     margin : 0;
     padding : 15px;
     font-size: 1.25em;
+    color: white;
+    background-color: pink;
 }
 
 #choices{
     width : 480px;
-    position: absolute;
+    position: center;
     right : 0;
     top : 125px;
-    padding : 10px
+    padding : 10px;
+    background-color: pink;
 }
 .choice{
     display: inline-block;
@@ -33,10 +42,13 @@ body{
     border-radius: 5px;
     cursor: pointer;
     padding : 5px;
+    color: white;
+    background-color: turquoise;
 }
 .choice:hover{
     border : 2px solid grey;
     font-weight: bold;
+    color: white
 }
 
 
@@ -68,6 +80,17 @@ body{
     text-align: center;
 }
 
+.container-fluid {
+    /* The image used */
+    background-image: url("https://www.tate.org.uk/art/images/work/T/T00/T00897_10.jpg");
+
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 
 
