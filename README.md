@@ -17,3 +17,8 @@ I also added a prompt in the scoreRender function that asks for the users initia
 The next step will be styling and theming the quiz game and adding a few extra flares, perhaps alerts to trigger when time is getting low, or if answers are obviously wrong some sort of animation triggers.
 
 
+August 1, 2020
+
+Added to the function "answerisWrong" to subtrect 5 seconds any time a wrong answer is selected.  
+
+

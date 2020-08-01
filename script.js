@@ -120,6 +120,7 @@ function answerIsCorrect(){
 
 // answer is Wrong
 function answerIsWrong(){
+    time = time - 5
 
 }
 
