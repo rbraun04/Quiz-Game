@@ -1,6 +1,7 @@
 var quiz = document.getElementById("quiz");
 var question = document.getElementById("question");
 var qImg = document.getElementById("qImg");
+var countdown = document.getElementById("countdown");
 var choiceA = document.getElementById("A");
 var choiceB = document.getElementById("B");
 var choiceC = document.getElementById("C");
@@ -11,52 +12,40 @@ var scores = [];
 //question variables:
 let questions = [
     {
-        question : "What does HTML stand for?",
-        imgSrc : "img/html.png",
-        choiceA : "Correct",
-        choiceB : "Wrong",
-        choiceC : "Wrong",
+        question : "Where was Andy born?",
+        choiceA : "Pittsburgh",
+        choiceB : "Brooklyn",
+        choiceC : "Chicago",
         correct : "A"
     },{
-        question : "What does CSS stand for?",
-        imgSrc : "img/css.png",
-        choiceA : "Wrong",
-        choiceB : "Correct",
-        choiceC : "Wrong",
+        question : "What religion did Andy practice?",
+        choiceA : "Protestant",
+        choiceB : "Catholic",
+        choiceC : "Taoism",
         correct : "B"
     },{
-        question : "What does JS stand for?",
-        imgSrc : "img/js.png",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
+        question : "What year was 'Campbell's Soup' painted?",
+        choiceA : "1969",
+        choiceB : "1970",
+        choiceC : "1968",
         correct : "C"
     },{
-        question : "What does JS stand for?",
-        imgSrc : "img/js.png",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
-        correct : "C"
+        question : "Who tried to kill Warhol?",
+        choiceA : "Valerie Solanas",
+        choiceB : "Steve McQueen",
+        choiceC : "Elizabeth Taylor",
+        correct : "A"
     },{
-        question : "What does JS stand for?",
-        imgSrc : "img/js.png",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
-        correct : "C"
-    },{
-        question : "What does JS stand for?",
-        imgSrc : "img/js.png",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
+        question : "What graffiti artist paid homage to Andy?",
+        choiceA : "RETNA",
+        choiceB : "Banksy",
+        choiceC : "Fab Five Freddy",
         correct : "C"
     }
 ];
 
 // Alert to start the quiz:
-alert("You have 1 Minute to complete this Quiz!  For every wrong answer you will get deducted 5 seconds!! Choose well....!")
+alert("You have 1 Minute to complete this Quiz!  For every wrong answer you will lose 5 seconds!! Goodluck....!")
 
 
 let lastQuestion = questions.length - 1;
@@ -64,7 +53,6 @@ let runningQuestion = 0;
 let count = 0;
 let score = 0;
 
-//start quiz
 
 
 // countdown function
@@ -95,6 +83,9 @@ function updateCountdown() {
      if (timer < 0) {
        scoreRender();
       clearInterval(startingMinutes);
+      countdown.style.display = "none";
+
+    
    }
 }
 //render questions function:
@@ -114,6 +105,8 @@ function startQuiz(){
     quiz.style.display = "block";
 }
 
+//answer is Correct
+
 function answerIsCorrect(){
     
 }
@@ -121,8 +114,9 @@ function answerIsCorrect(){
 // answer is Wrong
 function answerIsWrong(){
     time = time - 5
-
 }
+
+
 
 function checkAnswer(answer){
     if( answer == questions[runningQuestion].correct){
@@ -132,7 +126,6 @@ function checkAnswer(answer){
         answerIsCorrect();
     }else{
         // answer is wrong
-        // change progress color to red
         answerIsWrong();
     }
     count = 0;
@@ -144,30 +137,25 @@ function checkAnswer(answer){
     else{
         // end the quiz and show the score
         clearInterval(startingMinutes);
+        time = 0;
         scoreRender();
+        countdown.style.display = "none";
     }
 }
 
 function scoreRender(){
     
-    var playerInitials = prompt("Enter your intials!")
+    var playerInitials = prompt("Enter your initials!")
     console.log(playerInitials)
     
 
     scoreDiv.style.display = "block";
     
-    // calculate the amount of question percent answered by the user
+    // percent correct 
     const scorePerCent = Math.round(100 * score/questions.length);
     
-    // choose the image based on the scorePerCent
-    let img = (scorePerCent >= 80) ? "img/5.png" :
-              (scorePerCent >= 60) ? "img/4.png" :
-              (scorePerCent >= 40) ? "img/3.png" :
-              (scorePerCent >= 20) ? "img/2.png" :
-              "img/1.png";
     
-    scoreDiv.innerHTML = "<img src="+ img +">";
-    scoreDiv.innerHTML += "<p>"+"Thank you for playing " + playerInitials + " Your Score = " + scorePerCent + "%</p>";
+    scoreDiv.innerHTML += "<p>"+"Thank you for playing " + playerInitials + " your score is " + scorePerCent + "%!</p>";
     
     scores = localStorage.setItem(playerInitials, scorePerCent)
 

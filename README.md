@@ -22,3 +22,8 @@ August 1, 2020
 Added to the function "answerisWrong" to subtrect 5 seconds any time a wrong answer is selected.  
 
 Adding background images, going down a "Pop art" theme, maybe turn this quiz into random pop questions.
+
+--
+
+Fixed issue with counter - removed it from display when game has ended.
+Fixed images issues and styling.
