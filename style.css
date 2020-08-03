@@ -7,6 +7,17 @@ html, body{
     position: center;
 }
 
+.navbar {
+    background-color: transparent;
+    font: 400 32px/1.8 "Lato", sans-serif;
+    float: center;
+    text-align: center;
+    -webkit-text-stroke: 1.5px rgb(0, 0, 0);
+}
+
+.imgage {
+    position: right;
+}
 
 h1 {
     text-align: center;
@@ -18,7 +29,7 @@ h1 {
         color: rgb(239, 179, 179);
         background-color: transparent;
         font-weight: bolder;
-        letter-spacing: 10px;
+        letter-spacing: 20px;
         font: 400 32px/1.8 "Lato", sans-serif;
         float: center;
         text-align: center;
@@ -28,20 +39,22 @@ h1 {
     
 #question{
     background-color: transparent;
-    color: rgb(239, 179, 179);
+    padding-top: 115px;
+    color: rgb(232, 209, 209);
     font-weight: bolder;
     letter-spacing: 1px;
-    font: 400 28px/1.8 "Lato", sans-serif;
+    font: 400 59px/1.8 "Lato", sans-serif;
     text-align:center;
     background-color: transparent;
-    -webkit-text-stroke: 1.5px rgb(0, 0, 0);
+    -webkit-text-stroke: 2.6px rgb(0, 0, 0);
     
     
 }
 
 #choices{
     background-color: transparent;
-    color: rgb(239, 179, 179);
+    padding-top: 230px;
+    color: rgb(241, 198, 198);
     -webkit-text-stroke: 1px rgb(0, 0, 0);
 }
 .choice{
@@ -49,7 +62,7 @@ h1 {
     width : 135px;
     text-align: center;
     border : 1px solid grey;
-    border-radius: 5px;
+    border-radius: 30px;
     cursor: pointer;
     padding : 5px;
     background-color: black;
@@ -62,23 +75,21 @@ h1 {
 
 #scoreContainer{
     display: none;
-    color: rgb(239, 179, 179);
-    -webkit-text-stroke: 1px rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    -webkit-text-stroke: .5px rgb(0, 0, 0);
     font: 400 28px/1.8 "Lato", sans-serif;
-    text-align: center;
+    text-align: left;
 }
 
 #scoreContainer p{
-    background-color:transparent;
+    background-color: transparent;
+    padding-top: 80px;
     display: block;
     font-weight: bold;
-    text-align: center;
-    color: rgb(246, 54, 54);
-    -webkit-text-stroke: 1.5px rgb(0, 0, 0);
+    color: rgb(241, 201, 201);
+    letter-spacing: 4px;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
     font: 400 38px/1.8 "Lato", sans-serif;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     text-align: center;
 }
 
@@ -114,7 +125,7 @@ h1 {
     color: white;
     font-weight: bolder;
     letter-spacing: 10px;
-    font: 400 22px/1.8 "Lato", sans-serif;
+    font: 400 30px/1.8 "Lato", sans-serif;
     float: center;
     text-align: center;
     -webkit-text-stroke: 1.5px rgb(0, 0, 0);
